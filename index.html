@@ -47,7 +47,6 @@
     <p>Please click below to try again:</p>
 
     <button id="reloadBtn">🔁 Click Here to Reload</button>
-    <p id="clickCount">You have clicked <span id="count">0</span> times.</p>
 
     <div id="spinner">
       <div class="loader"></div>
@@ -56,22 +55,18 @@
   </div>
 
   <script>
-    // Get count from localStorage (optional), or just track for the session
-    let count = sessionStorage.getItem("clickCount") || 0;
-    document.getElementById("count").innerText = count;
-
     document.getElementById("reloadBtn").onclick = function() {
-      count++;
-      sessionStorage.setItem("clickCount", count);
-      document.getElementById("count").innerText = count;
+      // 🔗 Send click to Google Apps Script to log it
+      fetch("YOUR_SCRIPT_URL_HERE")
+        .catch(err => console.error("Failed to log click:", err));
 
-      // Show spinner
+      // 🌀 Show spinner
       document.getElementById("spinner").style.display = "block";
 
-      // Delay before reload
+      // 🔄 Simulate "reloading"
       setTimeout(() => {
         location.reload();
-      }, 2000); // 2 seconds
+      }, 2000);
     };
   </script>
 </body>
