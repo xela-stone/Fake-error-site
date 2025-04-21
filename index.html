@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Error - Site Broken</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial, sans-serif;
+      margin-top: 100px;
+      background-color: #f8f8f8;
+    }
+    #error-box {
+      display: inline-block;
+      padding: 30px;
+      border: 1px solid #ccc;
+      background-color: #fff;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    img {
+      cursor: pointer;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div id="error-box">
+    <h1>⚠️ Error 503: Service Temporarily Unavailable</h1>
+    <p>Something went wrong while loading the page.</p>
+    <p>Please click below to try again:</p>
+    <img src="https://via.placeholder.com/250x80.png?text=Click+Here+to+Reload" alt="Reload Button" id="reloadBtn">
+  </div>
+
+  <script>
+    document.getElementById("reloadBtn").onclick = function() {
+      location.reload();
+    };
+  </script>
+</body>
+</html>
